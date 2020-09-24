@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/chai": "4.2.12",
     "@types/node": "13.1.6",
-    "@types/node-cleanup": "2.1.0",
+    "@types/node-cleanup": "2.1.1",
     "ava": "1.4.1",
     "babel-loader": "8.1.0",
     "babel-preset-env": "1.7.0",
