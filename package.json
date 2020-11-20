@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/chai": "4.2.13",
-    "@types/node": "13.1.6",
+    "@types/node": "14.14.9",
     "@types/node-cleanup": "2.1.1",
     "ava": "1.4.1",
     "babel-loader": "8.1.0",
