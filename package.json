@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Node.js bundle for FlowCrypt Android internal use.",
   "dependencies": {
-    "openpgp": "4.10.8",
+    "openpgp": "4.10.10",
     "sanitize-html": "1.21.1",
     "zxcvbn": "4.4.2"
   },
