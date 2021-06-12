@@ -474,7 +474,7 @@ ava.default('parseDecryptMsg compat mime-email-encrypted-inline-text-2 Mime-Text
   t.pass();
 });
 
-ava.default('parseDecryptMsg - decryptErr', async t => {
+ava.default.only('parseDecryptMsg - decryptErr', async t => {
   const { keys } = getKeypairs('rsa2'); // intentional key mismatch
   const { data: blocks, json: decryptJson } = await request('parseDecryptMsg', { keys }, await getCompatAsset('direct-encrypted-text'), false);
   expectData(blocks, 'msgBlocks', [{
@@ -484,12 +484,12 @@ ava.default('parseDecryptMsg - decryptErr', async t => {
       "success": false,
       "error": {
         "type": "key_mismatch",
-        "message": "Session key decryption failed."
+        "message": "Missing appropriate key"
       },
       "longids": {
         "message": ["0BAB9C018B265D22"],
-        "matching": ["7C307E6F2092962D"],
-        "chosen": ["7C307E6F2092962D"],
+        "matching": [],
+        "chosen": [],
         "needPassphrase": []
       },
       "isEncrypted": true

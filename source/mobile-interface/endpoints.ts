@@ -279,4 +279,9 @@ export class Endpoints {
     return fmtRes({ encryptedKey: key.armor() });
   }
 
+  public keyCacheWipe = async (): Promise<Buffers> => {
+    Store.keyCacheWipe();
+    return fmtRes({});
+  }
+
 }

@@ -178,6 +178,9 @@ export class PgpMsg {
       const text = await openpgp.stream.readToEnd(prepared.message.getText()!);
       return { success: true, content: Buf.fromUtfStr(text), isEncrypted, signature };
     }
+    if (!keys.prvMatching.length && !msgPwd) {
+      return { success: false, error: { type: DecryptErrTypes.keyMismatch, message: 'Missing appropriate key' }, message: prepared.message, longids, isEncrypted };
+    }
     if (!keys.prvForDecryptDecrypted.length && !msgPwd) {
       return { success: false, error: { type: DecryptErrTypes.needPassphrase, message: 'Missing pass phrase' }, message: prepared.message, longids, isEncrypted };
     }
@@ -336,7 +339,7 @@ export class PgpMsg {
           }
         }
       }
-      keys.prvForDecrypt = keys.prvMatching.length ? keys.prvMatching : kiWithPp;
+      keys.prvForDecrypt = keys.prvMatching;
     } else { // prvs not needed for signed msgs
       keys.prvForDecrypt = [];
     }
