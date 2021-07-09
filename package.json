@@ -8,7 +8,7 @@
     "zxcvbn": "4.4.2"
   },
   "devDependencies": {
-    "@types/chai": "4.2.18",
+    "@types/chai": "4.2.21",
     "@types/node": "13.1.6",
     "@types/node-cleanup": "2.1.1",
     "ava": "1.4.1",
